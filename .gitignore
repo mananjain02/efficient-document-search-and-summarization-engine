@@ -1,0 +1,5 @@
+__pycache__
+.env
+vector_databases
+logs
+temp_files
