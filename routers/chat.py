@@ -38,7 +38,7 @@ async def chat(user: user_dependency, id: str, chatRequest: ChatRequest):
     chain = ConversationalRetrievalChain.from_llm(
         llm=LLM,
         chain_type='stuff',
-        retriever=vectorstore.as_retriever(search_kwargs={"k": 5}),
+        retriever=vectorstore.as_retriever(search_kwargs={"k": 4}),
         return_source_documents=True
     )
     history = []
@@ -47,10 +47,14 @@ async def chat(user: user_dependency, id: str, chatRequest: ChatRequest):
         history.append((chatRequest.history[ind], chatRequest.history[ind+1]))
         ind+=2
     
-    prompt = get_prompt(project.get("topic"), project.get("subtopic"), project.get("resp_length"),  chatRequest.query, "English")
-    response = chain({"question": prompt, "chat_history": history})
+    # prompt = get_prompt(project.get("topic"), project.get("subtopic"), project.get("resp_length"),  chatRequest.query, "English")
+    response = chain({"question": chatRequest.query, "chat_history": history})
+
     source_list = []
     for source in response["source_documents"]:
+        if source.metadata["source"]=="project_id":
+            continue
+
         source_list.append(Source(
             text=source.page_content,
             name=source.metadata["source"],

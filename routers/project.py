@@ -51,7 +51,7 @@ async def get_all_projects(user: user_dependency):
             "subtopic":project.get("subtopic"),
             "resp_length":project.get("resp_length"),
         })
-    # send real name here from database
+
     return {"projects": projects_to_return}
     
 
@@ -117,7 +117,7 @@ async def modify_project_detail(user: user_dependency, id: str, createProjectReq
 
 
 @router.post("/{id}/docs", status_code=status.HTTP_201_CREATED)
-async def upload_docs(user: user_dependency, id: str, file: UploadFile = File(...)):
+async def upload_docs(user: user_dependency, id: str, file: UploadFile):
     if user is None:
         raise HTTPException(detail="unauthorized", status_code=status.HTTP_401_UNAUTHORIZED)
 
