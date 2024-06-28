@@ -25,8 +25,8 @@ To set up the project locally, follow these steps:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/mananjain02/Efficient-Document-Search-and-Summarization-Engine.git
-    cd Efficient-Document-Search-and-Summarization-Engine
+    git clone https://github.com/mananjain02/efficient-document-search-and-summarization-engine.git
+    cd efficient-document-search-and-summarization-engine
     ```
 
 2. **Create a Virtual Environment**:
