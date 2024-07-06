@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Efficient Document Search and Summarization Engine** is a powerful tool designed to enhance research efficiency and clarity by integrating advanced Language Learning Models (LLMs) such as ChatGPT and LLAMA. This project leverages cutting-edge technologies to provide a seamless and efficient document search and summarization experience.
+The **Efficient Document Search and Summarization Engine** is a powerful tool designed to enhance research efficiency and clarity by integrating advanced Large Language Models (LLMs) such as ChatGPT and LLAMA. This project leverages cutting-edge technologies to provide a seamless and efficient document search and summarization experience.
 
 ## Features
 
